@@ -77,7 +77,7 @@ const Planificador = () => {
     }
 
     try {
-      const response = await axios.post('https://ruteo-backend.onrender.com/planificar', formData, {
+      const response = await axios.post('http://127.0.0.1:8000/planificar', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setDataPlanificada(response.data);
@@ -106,7 +106,7 @@ const Planificador = () => {
             rango: modalData.mercaderista.rango,
             rutas: modalData.mercaderista.rutas
         };
-        const response = await axios.post('https://ruteo-backend.onrender.com/rutas/reasignar-pdv', payload);
+        const response = await axios.post('http://127.0.0.1:8000/rutas/reasignar-pdv', payload);
         actualizarData(response.data);
         setModalData(null);
         alert("¡Punto movido exitosamente!");
@@ -145,7 +145,7 @@ const Planificador = () => {
             rutas: bulkModalData.mercaderistaFull.rutas,
             rango: bulkModalData.mercaderistaFull.rango
           };
-          const response = await axios.post('https://ruteo-backend.onrender.com/rutas/reasignar-masivo', payload);
+          const response = await axios.post('http://127.0.0.1:8000/rutas/reasignar-masivo', payload);
           actualizarData(response.data);
           setBulkModalData(null);
           setTargetRuta('');
@@ -167,7 +167,7 @@ const Planificador = () => {
     if (!dataPlanificada) return;
     setLoading(true);
     try {
-        const response = await axios.post('https://ruteo-backend.onrender.com/exportar', dataPlanificada, { responseType: 'blob' });
+        const response = await axios.post('http://127.0.0.1:8000/exportar', dataPlanificada, { responseType: 'blob' });
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const link = document.createElement('a');
         link.href = url;
