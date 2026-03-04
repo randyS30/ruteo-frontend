@@ -247,7 +247,7 @@ const Planificador = () => {
                   <div className="animate-fadeIn p-4 bg-purple-50 rounded-lg border border-purple-100">
                       <label className="block text-sm font-bold text-purple-800 mb-1">🎯 Puntos Objetivo por Ruta</label>
                       <p className="text-xs text-purple-600 mb-2">El sistema calculará cuántas rutas se necesitan.</p>
-                      <input type="number" min="10" value={capacidad} onChange={(e) => setCapacidad(e.target.value)} className="w-full px-4 py-2 bg-white border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none font-semibold text-gray-700 mb-4"/>
+                      <input type="number" min="05" value={capacidad} onChange={(e) => setCapacidad(e.target.value)} className="w-full px-4 py-2 bg-white border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none font-semibold text-gray-700 mb-4"/>
                       
                       {/* CAMBIO 2: BOTÓN DE SÁBADO PARA BOLSA (Mismo estilo que abajo) */}
                       <div className="flex items-center justify-between bg-purple-100 p-3 rounded-lg border border-purple-200">
